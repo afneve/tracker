@@ -51,6 +51,8 @@ var iceAge = {
         $("#loggedin").toggle(isLoggedIn);
     },
     loadTrelloData: function () {
+        var activityHTML = '';
+
         Trello.get("/boards/" + iceAge.boardId + "/lists", function (cl) {
             for (var i = 0; i < cl.length; i++) {
                 console.log(cl[i]);
@@ -59,8 +61,11 @@ var iceAge = {
             
             Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
                 for (var i = 0; i < cl.length; i++) {
-                    console.log(cl[i]);
+                    activityHTML += '<div class="date">' + cl[i].dateLastActivity + '</div>';
+                    activityHTML += '<div class="name">' + cl[i].name + '</div>';
                 }
+
+                $('#app').html(activityHTML);
             });
         });     
 
