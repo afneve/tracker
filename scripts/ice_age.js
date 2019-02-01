@@ -74,6 +74,9 @@ var iceAge = {
                     date = cl[i].dateLastActivity.split('T')[0];
                     time = cl[i].dateLastActivity.split('T')[1];
 
+                    iceAge.testing = new Date(cl[i].dateLastActivity);
+                    console.log(iceAge.testing);
+
                     var dateObject = new Date(cl[i].dateLastActivity*1000);
                     // Hours part from the timestamp
                     var hours = dateObject.getHours();
