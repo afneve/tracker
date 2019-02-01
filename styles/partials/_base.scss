@@ -1,0 +1,28 @@
+$ice_blue: #0C78C5;
+$ice_yellow: #fce037;
+$ice_green: #26bf42;
+
+%progressBarContainer {
+    height: 6px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .progressBar {
+        height: 100%;
+        background: $ice_yellow;
+        /* Old browsers */
+        background: -moz-linear-gradient(left, $ice_yellow 0%, $ice_green 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, $ice_yellow 0%, $ice_green 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, $ice_yellow 0%, $ice_green 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$ice_yellow', endColorstr='$ice_green', GradientType=1);
+    }   
+}
+
+[data-complete=true] {
+    .progressBar {
+        background: $ice_green;
+    }
+}

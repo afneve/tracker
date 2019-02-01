@@ -1,0 +1,296 @@
+.progressBarContainer {
+  height: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.progressBarContainer .progressBar {
+  height: 100%;
+  background: #fce037;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #fce037 0%, #26bf42 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #fce037 0%, #26bf42 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #fce037 0%, #26bf42 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$ice_yellow", endColorstr="$ice_green", GradientType=1);
+}
+
+[data-complete=true] .progressBar {
+  background: #26bf42;
+}
+
+body {
+  background: #fff;
+  color: #666;
+  font-family: "Oxygen", Arial, sans-serif;
+  margin: 0;
+}
+
+h2 {
+  color: #0C78C5;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+h4 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+header nav {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  height: 40px;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+header nav .selected {
+  background: #0C78C5;
+}
+header nav .nav-item {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#microphone {
+  width: 10%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  border-left: 2px solid white;
+}
+#microphone.active i {
+  color: #0C78C5;
+}
+
+#ice-age {
+  padding: 60px 12px 0;
+}
+
+.hide {
+  display: none;
+}
+
+#progress-view .user-container {
+  display: block;
+  width: 100%;
+  vertical-align: top;
+  padding: 0 10px 35px;
+  box-sizing: border-box;
+}
+#progress-view .county {
+  margin-bottom: 20px;
+}
+#progress-view .county h3 {
+  margin: 0;
+  cursor: pointer;
+  font-size: 1em;
+}
+#progress-view .county .segment-name {
+  font-size: 0.9em;
+  padding: 5px;
+  font-weight: bold;
+}
+#progress-view .county .segment-name .complete {
+  color: white;
+  background: #26bf42;
+}
+#progress-view .segments {
+  display: none;
+}
+#progress-view .segments .more-info {
+  color: #0C78C5;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#progress-view .user-segment-container {
+  margin-bottom: 15px;
+}
+#progress-view #progress-view h4 {
+  text-align: left;
+}
+#progress-view .container {
+  margin: 0 0 35px;
+}
+#progress-view .user-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+#progress-view .user-container h4 {
+  font-size: 22px;
+}
+#progress-view .user-container span.completion-data,
+#progress-view .segment-notes {
+  font-weight: normal;
+  font-size: 14px;
+}
+#progress-view .user-miles-remaining {
+  color: #0C78C5;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  #progress-view .user-container {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+#segments-view {
+  /*
+  Styles for list of segments
+  */
+}
+#segments-view .segment-container {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 45px;
+}
+#segments-view .county-name a {
+  text-decoration: none !important;
+  color: #0C78C5 !important;
+}
+#segments-view #segment-filter-container {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Oxygen", sans-serif;
+  width: 30%;
+  background: #eee;
+  float: left;
+  box-sizing: border-box;
+}
+#segments-view #segment-filter-container select {
+  display: none;
+  border: none;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 5px 0;
+  font-family: "Oxygen", sans-serif;
+  color: #666;
+}
+#segments-view .terminus-container {
+  margin: 10px 0;
+}
+#segments-view #segment-filter {
+  background: #eee;
+  box-sizing: border-box;
+}
+#segments-view #segment-filter .selected {
+  background: white !important;
+}
+#segments-view #segment-filter .complete {
+  background: #fce037;
+}
+#segments-view #segment-filter ul {
+  list-style: none;
+  padding: 0;
+}
+#segments-view #segment-filter ul > li > a {
+  font-size: 14px;
+  display: block;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+}
+#segments-view #segment-list {
+  float: left;
+  width: 70%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+#segments-view .segment-name {
+  text-align: left;
+  font-weight: bold;
+}
+#segments-view .segment-summary {
+  margin-bottom: 20px;
+}
+#segments-view .segment {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 150px;
+}
+#segments-view .segment-details {
+  position: relative;
+  text-transform: capitalize;
+}
+#segments-view .segment-details span {
+  position: relative;
+  margin-right: 5px;
+}
+#segments-view .yes {
+  cursor: pointer;
+}
+#segments-view .yes i {
+  color: #26bf42;
+}
+#segments-view .no i {
+  color: #C50401;
+}
+#segments-view .no-hiking {
+  margin: 15px 0 5px;
+}
+#segments-view .segment-info {
+  width: 50%;
+  display: inline-block;
+}
+#segments-view #segment-list a {
+  color: #236B8E;
+}
+#segments-view a.location {
+  color: #236B8E;
+  display: block;
+  clear: both;
+}
+#segments-view .easy {
+  color: #017927;
+}
+#segments-view .difficult {
+  color: #C50401;
+}
+#segments-view .user-segments-view {
+  margin-bottom: 15px;
+}
+#segments-view .county h3 {
+  margin: 0 0 5px;
+}
+#segments-view .secondary-location {
+  margin-top: 10px;
+}
+#segments-view .location-based-info {
+  margin: 16px 0;
+}
+@media (max-width: 600px) {
+  #segments-view #segment-filter-container {
+    background: white;
+    width: 100%;
+  }
+  #segments-view #segment-filter-container select {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  #segments-view #segment-filter {
+    width: 100%;
+    display: none;
+  }
+  #segments-view #segment-list {
+    width: 100%;
+  }
+  #segments-view .segment-info {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

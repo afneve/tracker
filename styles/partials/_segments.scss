@@ -1,0 +1,186 @@
+#segments-view {
+    .segment-container {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 55px;
+    }
+    .county-name a {
+        text-decoration: none !important;
+        color: $ice-blue !important;
+    }
+    #segment-filter-container {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Oxygen', sans-serif;
+        width: 30%;
+        background: #eee;
+        float: left;
+        box-sizing: border-box;
+        select {
+            display: none;
+            border: none;
+            font-size: 19px;
+            font-weight: bold;
+            padding: 5px 0;
+            font-family: 'Oxygen', sans-serif;
+            color: #666;
+        }
+    }
+    .terminus-container {
+        margin: 10px 0;
+    }
+    #segment-filter {
+        background: #eee;
+        box-sizing: border-box;
+        .selected {
+            background: white !important;
+        }
+        .complete {
+            background: $ice-yellow;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            >li>a {
+                font-size: 14px;
+                display: block;
+                padding: 8px;
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+    /*
+Styles for list of segments
+*/
+    #segment-list {
+        float: left;
+        width: 70%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .segment-name {
+        text-align: left;
+        font-weight: bold;
+    }
+    .segment-summary {
+        margin-bottom: 20px;
+    }
+    .segment {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 150px;
+    }
+    .segment-details {
+        position: relative;
+        text-transform: capitalize;
+        span {
+            position: relative;
+            margin-right: 5px;
+        }
+    }
+    .yes {
+        cursor: pointer;
+        i {
+            color: $ice-green;
+        }
+    }
+    .no-hiking {
+        margin: 15px 0 5px;
+        font-weight:bold;
+        color: #C50401;
+    }
+    .segment-info {
+        width: 50%;
+        display: inline-block;
+    }
+    .extra-info {
+        margin-top: 20px;
+        font-size: 25px;
+        display: flex;
+
+        i {
+            margin-right: 10px;
+        }
+
+        .yes {
+            .fa-tint {
+                color: $ice-blue;
+            }
+            .restroom {
+
+            }
+        }
+    }
+    #segment-list a {
+        color: #236B8E;
+    }
+    a.location {
+        color: #236B8E;
+        display: block;
+        clear: both;
+    }
+    .easy {
+        color: #017927;
+    }
+    .difficult {
+        color: #C50401;
+    }
+    .user-segments-view {
+        margin-bottom: 15px;
+    }
+    .county h3 {
+        margin: 0 0 5px;
+    }
+    .secondary-location {
+        margin-top: 10px;
+    }
+    .location-based-info {
+        margin: 16px 0;
+    }
+    #ice-age-overlay {
+        padding: 20px;
+        width: 80%;
+        box-sizing: border-box;
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: black;
+        font-size: 16px;
+        z-index: 50;
+        background-color: white;
+    }
+    #overlay-screen {
+        background-color: #000;
+        opacity: 0.8;
+        width: 100%;
+        position: fixed;
+        z-index: 30;
+    }
+    .overlay-heading {
+        text-align: left;
+        text-transform: capitalize;
+    }
+    @media (max-width: 600px) {
+        #segment-filter-container {
+            background: white;
+            width: 100%;
+            select {
+                display: block;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+        #segment-filter {
+            width: 100%;
+            display: none;
+        }
+        #segment-list {
+            width: 100%;
+        }
+        .segment-info {
+            width: 100%;
+        }
+    }
+}

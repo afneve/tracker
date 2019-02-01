@@ -1,0 +1,106 @@
+body {
+    background: #fff;
+    color: #666;
+    font-family: 'Oxygen', Arial, sans-serif;
+    margin: 0;
+}
+
+h2{
+	color: $ice_blue;
+    text-align:left;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+h4{
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+header {
+    nav {
+        position: fixed;
+        display: flex;
+        width: 100%;
+        background: black;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        height: 40px;
+        z-index: 10;
+        overflow: hidden;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+        .selected {
+            background: $ice_blue;
+        }
+
+        .nav-item {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+} 
+
+#microphone{
+    width: 10%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    border-left: 2px solid white;
+
+    &.active i {
+        color: $ice_blue;
+    }
+}
+
+.progressBarContainer {
+    @extend %progressBarContainer;
+}
+
+
+#ice-age{
+	padding: 60px 12px 0;
+}
+
+.hide{
+    display: none;
+}
+
+#ice-age-overlay {
+    padding: 20px;
+    width: 80%;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: black;
+    font-size: 16px;
+    z-index: 50;
+    background-color: white;
+}
+#overlay-screen {
+    background-color: #000;
+    opacity: 0.8;
+    width: 100%;
+    position: fixed;
+    z-index: 30;
+}
+.overlay-heading {
+    text-align: left;
+    text-transform: capitalize;
+}
+
+#info-view {
+    a {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+.gallery {
+    margin-left: 20px;
+    font-weight: normal;
+}
