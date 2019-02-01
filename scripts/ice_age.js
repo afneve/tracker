@@ -67,7 +67,10 @@ var iceAge = {
                 var date = '';
                 var time = '';
 
+               
+
                 for (var i = 0; i < cl.length; i++) {
+                    console.log(cl[i]);
                     date = cl[i].dateLastActivity.split('T')[0];
                     time = cl[i].dateLastActivity.split('T')[1];
 
