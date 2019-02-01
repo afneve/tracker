@@ -71,29 +71,16 @@ var iceAge = {
 
                 for (var i = 0; i < cl.length; i++) {
                     console.log(cl[i]);
-                    date = cl[i].dateLastActivity.split('T')[0];
-                    time = cl[i].dateLastActivity.split('T')[1];
 
-                    iceAge.testing = new Date(cl[i].dateLastActivity);
-                    console.log(iceAge.testing);
+                    var dateTime = new Date(cl[i].dateLastActivity);
+                    var date = dateTime.toDateString();
+                    var time = dateTime.toLocaleTimeString();
 
-                    var dateObject = new Date(cl[i].dateLastActivity*1000);
-                    // Hours part from the timestamp
-                    var hours = dateObject.getHours();
-                    // Minutes part from the timestamp
-                    var minutes = "0" + dateObject.getMinutes();
-                    // Seconds part from the timestamp
-                    var seconds = "0" + dateObject.getSeconds();
-        
-                    // Will display time in 10:30:23 format
-                    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-
-                    console.log(formattedTime);
-
-
+                    activityHTML += '<div class="activity" style="margin-bottom: 10px;>';
                     activityHTML += '<div class="date">' + date + '</div>';
-                    activityHTML += '<div class="date">' + time + '</div>';
+                    activityHTML += '<div class="time">' + time + '</div>';
                     activityHTML += '<div class="name">' + cl[i].name + '</div>';
+                    activityHTML += '</div>';
                 }
 
                 $('#app').html(activityHTML);
