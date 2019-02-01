@@ -60,8 +60,13 @@ var iceAge = {
 
             
             Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
+                var date = '';
+                var time = '';
                 for (var i = 0; i < cl.length; i++) {
-                    activityHTML += '<div class="date">' + cl[i].dateLastActivity + '</div>';
+                    date = cl[i].dateLastActivity.split('T')[0];
+                    time = cl[i].dateLastActivity.split('T')[1];
+                    activityHTML += '<div class="date">' + date + '</div>';
+                    activityHTML += '<div class="date">' + time + '</div>';
                     activityHTML += '<div class="name">' + cl[i].name + '</div>';
                 }
 
