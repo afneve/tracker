@@ -2,7 +2,7 @@
 
 var iceAge = {
     boardId: "9a32wh8V",
-    listId: "",
+    listId: "5c53b3dac4bbaa4552c4bcb9",
     trelloCompleteArray: [],
     trelloPartialArray: [],
 
@@ -56,12 +56,12 @@ var iceAge = {
                 console.log(cl[i]);
             }
 
-            /*
+            
             Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
                 for (var i = 0; i < cl.length; i++) {
                     console.log(cl[i]);
                 }
-            });*/ 
+            });
         });     
 
             
