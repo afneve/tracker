@@ -76,7 +76,7 @@ var iceAge = {
                     var date = dateTime.toDateString();
                     var time = dateTime.toLocaleTimeString();
 
-                    activityHTML += '<div class="activity" style="margin-bottom: 10px">';
+                    activityHTML += '<div class="activity" style="margin-bottom: 20px">';
                     activityHTML += '<div class="date">' + date + '</div>';
                     activityHTML += '<div class="time">' + time + '</div>';
                     activityHTML += '<div class="name">' + cl[i].name + '</div>';
