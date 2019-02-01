@@ -58,13 +58,33 @@ var iceAge = {
                 console.log(cl[i]);
             }
 
+            // Create a new JavaScript Date object based on the timestamp
+            // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+           
+
             
             Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
                 var date = '';
                 var time = '';
+
                 for (var i = 0; i < cl.length; i++) {
                     date = cl[i].dateLastActivity.split('T')[0];
                     time = cl[i].dateLastActivity.split('T')[1];
+
+                    var dateObject = new Date(cl[i].dateLastActivity*1000);
+                    // Hours part from the timestamp
+                    var hours = dateObject.getHours();
+                    // Minutes part from the timestamp
+                    var minutes = "0" + dateObject.getMinutes();
+                    // Seconds part from the timestamp
+                    var seconds = "0" + dateObject.getSeconds();
+        
+                    // Will display time in 10:30:23 format
+                    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+                    console.log(formattedTime);
+
+
                     activityHTML += '<div class="date">' + date + '</div>';
                     activityHTML += '<div class="date">' + time + '</div>';
                     activityHTML += '<div class="name">' + cl[i].name + '</div>';
