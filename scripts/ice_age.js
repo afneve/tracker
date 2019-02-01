@@ -51,11 +51,20 @@ var iceAge = {
         $("#loggedin").toggle(isLoggedIn);
     },
     loadTrelloData: function () {
-        Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
+        Trello.get("/boards/" + iceAge.boardId + "/lists", function (cl) {
             for (var i = 0; i < cl.length; i++) {
                 console.log(cl[i]);
             }
+
+            /*
+            Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
+                for (var i = 0; i < cl.length; i++) {
+                    console.log(cl[i]);
+                }
+            });*/ 
         });     
+
+            
     },
     cleanTrelloData: function (currentListItem) {
         var tempArray = [],
