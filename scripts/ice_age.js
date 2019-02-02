@@ -66,8 +66,9 @@ var iceAge = {
             Trello.get("lists/" + iceAge.listId + "/cards", function (cl) {
                 var date = '';
                 var time = '';
-
-               
+                var data = {};
+                var previousTime = 0;
+                var previousDate = 0;
 
                 for (var i = 0; i < cl.length; i++) {
                     console.log(cl[i]);
@@ -76,8 +77,18 @@ var iceAge = {
                     var date = dateTime.toDateString();
                     var time = dateTime.toLocaleTimeString();
 
+                   
+
                     activityHTML += '<div class="activity" style="margin-bottom: 20px">';
-                    activityHTML += '<div class="date">' + date + '</div>';
+                    if (date != previousDate) {
+                        activityHTML += '<div class="date">' + date + '</div>';
+                        previousDate = date;
+                    }
+                    
+                    if (dateTime.getHours() != previousTime.getHours()) {
+                        activityHTML += '<div class="hourTime">' + dateTime.getHours() + '</div>';
+                        previousTime = dateTime;
+                    }
                     activityHTML += '<div class="time">' + time + '</div>';
                     activityHTML += '<div class="name">' + cl[i].name + '</div>';
                     activityHTML += '</div>';
