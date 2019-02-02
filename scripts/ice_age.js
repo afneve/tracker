@@ -97,7 +97,7 @@ var iceAge = {
                     activityHTML += '</div>';
                 }
 
-                document.getElementById('app').html(activityHTML);
+                document.getElementById('app').innerHTML = activityHTML;
             });
         });     
 
