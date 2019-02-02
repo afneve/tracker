@@ -77,16 +77,19 @@ var iceAge = {
                     var date = dateTime.toDateString();
                     var time = dateTime.toLocaleTimeString();
 
+                    var hour = time.split(':')[0];
+                    var ampm = time.substring(time.length - 2, time.length);
+
                    
 
                     activityHTML += '<div class="activity" style="margin-bottom: 20px">';
                     if (date != previousDate) {
-                        activityHTML += '<div class="date">' + date + '</div>';
+                        activityHTML += '<h2 class="date">' + date + '</h2>';
                         previousDate = date;
                     }
                     
                     if (previousTime == 0 || dateTime.getHours() != previousTime.getHours()) {
-                        activityHTML += '<div class="hourTime">' + dateTime.getHours() + '</div>';
+                        activityHTML += '<h3 class="hourTime">' + hour + ' ' + ampm + '</h3>';
                         previousTime = dateTime;
                     }
                     activityHTML += '<div class="time">' + time + '</div>';
