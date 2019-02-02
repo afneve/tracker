@@ -89,7 +89,7 @@ var iceAge = {
                     }
                     
                     if (previousTime == 0 || dateTime.getHours() != previousTime.getHours()) {
-                        activityHTML += '<h3 class="hourTime" style="margin-bottom: 5px; border-bottom: 2px solid #666;">' + hour + ' ' + ampm + '</h3>';
+                        activityHTML += '<h3 class="hourTime" style="margin-bottom: 5px; background: #666; padding: 5px; color: white;">' + hour + ' ' + ampm + '</h3>';
                         previousTime = dateTime;
                     }
                     activityHTML += '<div class="time">' + time + '</div>';
