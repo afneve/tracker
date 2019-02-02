@@ -47,8 +47,8 @@ var iceAge = {
     updateLoggedIn: function () {
         //Trello.unauthorize();
         var isLoggedIn = Trello.authorized();
-        $("#loggedout").toggle(!isLoggedIn);
-        $("#loggedin").toggle(isLoggedIn);
+        // $("#loggedout").toggle(!isLoggedIn);
+        // $("#loggedin").toggle(isLoggedIn);
     },
     loadTrelloData: function () {
         var activityHTML = '';
@@ -97,7 +97,7 @@ var iceAge = {
                     activityHTML += '</div>';
                 }
 
-                $('#app').html(activityHTML);
+                document.getElementById('app').html(activityHTML);
             });
         });     
 
