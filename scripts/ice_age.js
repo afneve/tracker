@@ -85,7 +85,7 @@ var iceAge = {
                         previousDate = date;
                     }
                     
-                    if (dateTime.getHours() != previousTime.getHours()) {
+                    if (previousTime == 0 || dateTime.getHours() != previousTime.getHours()) {
                         activityHTML += '<div class="hourTime">' + dateTime.getHours() + '</div>';
                         previousTime = dateTime;
                     }
